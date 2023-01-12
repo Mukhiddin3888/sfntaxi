@@ -34,12 +34,17 @@ class AppWidget extends StatelessWidget {
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
               locale: context.locale,
-              onGenerateRoute: (settings) =>
-                  Routes.onGenerateRoute(
+              onGenerateRoute: (settings) {
+                debugPrint('setting: ${settings.name}');
+                debugPrint('token: ${dbService.token}');
+                debugPrint('token: ${dbService.token.accessToken}');
+                debugPrint('token: ${dbService.token.hasFailure}');
+                return Routes.onGenerateRoute(
                     context: context,
                     authFailure: dbService.token.hasFailure,
                     notConnection: connectivityX == ConnectivityResult.none,
-                  ),
+                  );
+              },
             ),
           );
         });

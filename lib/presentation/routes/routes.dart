@@ -1,6 +1,8 @@
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:sfntaxi/presentation/pages/auth/choose_language.dart';
+import 'package:sfntaxi/presentation/test.dart';
 import '../../domain/auth/auth_failure.dart';
 import '../../infrastructure/services/db_service.dart';
 import '../app_widget.dart';
@@ -13,13 +15,19 @@ class Routes {
     required bool notConnection,
   }) {
     if (notConnection) {
+      debugPrint('not connection page');
+
       return getNetworkNotFound();
     } else if (authFailure == null) {
-      return getNetworkNotFound();
+      debugPrint(' auth succcess page');
+
+      return getTestPage();
 
       // return getCurrentLocationRoute(context);
     } else {
-      return getNetworkNotFound();
+      debugPrint(' auth fail page');
+
+      return getChooseLanguagePage();
 
       // return getChooseLanguageRoute(context);
     }
@@ -38,6 +46,14 @@ class Routes {
 
   static PageRoute getNetworkNotFound() => MaterialPageRoute(
         builder: (_) => const NoConnection(),
+      );
+
+  static PageRoute getTestPage() => MaterialPageRoute(
+        builder: (_) => const TestPage(),
+      );
+
+  static PageRoute getChooseLanguagePage() => MaterialPageRoute(
+        builder: (_) => const ChooseLanguagePage(),
       );
 
   // static PageRoute getSplashPage(BuildContext context) => MaterialPageRoute(

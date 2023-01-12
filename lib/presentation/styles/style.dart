@@ -8,7 +8,7 @@ class Style {
   static const Color white = Color(0xffffffff);
   static const Color grey = Color(0xff9092A3);
   static const Color lightGrey = Color(0xffF6F6F6);
-  static const Color main = Color(0xff09B0E7);
+  static const Color main = Color(0xff9603FF);
   static const Color mainLight = Color(0xffE0F3FF);
   static const Color iconBlack = Color(0xff484A4C);
   static const Color orange = Color(0xffEB5339);
