@@ -15,11 +15,9 @@ class DBService {
   static const _dbLatidu = 'latidu';
   static const _dbLongtidu = 'longtidu';
   static const _dbPhoneNumber = 'phoneNumber';
-  static const _productAddedLastDate = 'productAddedLastDate';
 
 
   static Box? _box;
-  static Box? _productBox;
 
   DBService._();
 
@@ -79,11 +77,6 @@ class DBService {
   Future<void> signOut() async => await _box?.clear();
 
 
-
-  Future<void> clearProductsBox() async {
-    _box?.put(_productAddedLastDate, DateTime.now().toIso8601String());
-    await _productBox?.clear();
-  }
 }
 
 class UserInfo {
