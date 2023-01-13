@@ -6,7 +6,6 @@ import 'package:sfntaxi/presentation/styles/theme.dart';
 import 'package:sfntaxi/presentation/styles/theme_warpper.dart';
 import 'package:sfntaxi/presentation/widgets/custom_cta_button.dart';
 
-import '../../routes/routes.dart';
 
 
 class ChooseLanguagePage extends StatefulWidget {
@@ -33,47 +32,60 @@ class _ChooseLanguagePageState extends State<ChooseLanguagePage> {
                   SizedBox(
                     height: 24.h,
                   ),
-                  ListTile(
-                    onTap: () async {
-
-                      // await context.setLocale(const Locale('uz','UZ'));
-                      // setState(() {
-                      //   index = 0;
-                      //
-                      // });
-
-                    },
-                    minVerticalPadding: 0,
-                    contentPadding: EdgeInsets.zero,
-                    horizontalTitleGap: 0,
-                    leading: SvgPicture.asset(
-                      icons.uzb,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      color: colors.grey.withOpacity(0.12)
                     ),
-                    title: const Text('O‘zbek tili'),
-                    trailing: SvgPicture.asset(icons.selectedRadio),
-                    // trailing: index == 0 ? SvgPicture.asset(icons.selectedRadio): SvgPicture.asset(icons.selectRadio),
+                    child: ListTile(
+                      onTap: () async {
+
+                        // await context.setLocale(const Locale('uz','UZ'));
+                        // setState(() {
+                        //   index = 0;
+                        //
+                        // });
+
+                      },
+                      minVerticalPadding: 0,
+                      horizontalTitleGap: 0,
+                      leading: SvgPicture.asset(
+                        icons.uzb,
+                      ),
+                      title: const Text('O‘zbek tili'),
+                      trailing: SvgPicture.asset(icons.selectedRadio),
+                      // trailing: index == 0 ? SvgPicture.asset(icons.selectedRadio): SvgPicture.asset(icons.selectRadio),
+                    ),
                   ),
-                  ListTile(
-                    onTap: () async {
-                      // await context.setLocale(const Locale('ru','RU'));
-
-                      // setState(() {
-                      //   index = 1;
-                      //   ApiHeaderInfo.appLang = context.locale.languageCode;
-                      //
-                      //
-                      // });
-
-                    },
-                    minVerticalPadding: 0,
-                    contentPadding: EdgeInsets.zero,
-                    horizontalTitleGap: 0,
-                    leading: SvgPicture.asset(
-                      icons.russian,
+                  SizedBox(
+                    height: 14.h,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: colors.grey.withOpacity(0.12)
                     ),
-                    title: const Text('Русский язык'),
-                    // trailing:index == 1 ? SvgPicture.asset(icons.selectedRadio): SvgPicture.asset(icons.selectRadio),
-                    trailing: SvgPicture.asset(icons.selectRadio),
+                    child: ListTile(
+                      onTap: () async {
+                        // await context.setLocale(const Locale('ru','RU'));
+
+                        // setState(() {
+                        //   index = 1;
+                        //   ApiHeaderInfo.appLang = context.locale.languageCode;
+                        //
+                        //
+                        // });
+
+                      },
+                      minVerticalPadding: 0,
+                      horizontalTitleGap: 0,
+                      leading: SvgPicture.asset(
+                        icons.russian,
+                      ),
+                      title: const Text('Русский язык'),
+                      // trailing:index == 1 ? SvgPicture.asset(icons.selectedRadio): SvgPicture.asset(icons.selectRadio),
+                      trailing: SvgPicture.asset(icons.selectRadio),
+                    ),
                   ),
 
                 ],
