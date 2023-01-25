@@ -7,6 +7,7 @@ class Style {
   static const Color black = Color(0xff151515);
   static const Color white = Color(0xffffffff);
   static const Color grey = Color(0xff9092A3);
+  static const Color backgroundColor = Color(0xffF5F5F5);
   static const Color lightGrey = Color(0xffF6F6F6);
   static const Color main = Color(0xff9603FF);
   static const Color mainLight = Color(0xffE0F3FF);
@@ -138,6 +139,15 @@ class Style {
     );
   }
 
+  static TextStyle medium12({double size = 12, Color color = black}) {
+    return TextStyle(
+      fontFamily: 'Inter',
+      fontSize: size,
+      color: color,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle medium14({double size = 14, Color color = black}) {
     return TextStyle(
       fontFamily: 'Inter',
@@ -174,6 +184,14 @@ class Style {
     );
   }
   static TextStyle semiBold13({double size = 13, Color color = black}) {
+    return TextStyle(
+      fontFamily: 'Inter',
+      fontSize: size,
+      color: color,
+      fontWeight: FontWeight.w600,
+    );
+  }
+  static TextStyle semiBold12({double size = 12, Color color = black}) {
     return TextStyle(
       fontFamily: 'Inter',
       fontSize: size,

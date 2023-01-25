@@ -1,11 +1,21 @@
 
 
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:io';
+
 
 class ConnectivityX {
-  static Future<ConnectivityResult> get create async {
-    final connectivity = Connectivity();
-
-    return await connectivity.checkConnectivity();
+  Future<bool>  create() async {
+    bool isOnline = false;
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        isOnline = true;
+      } else {
+        isOnline = false;
+      }
+    } on SocketException catch (_) {
+      isOnline = false;
+    }
+    return isOnline;
   }
 }

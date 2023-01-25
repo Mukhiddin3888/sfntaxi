@@ -1,7 +1,8 @@
 
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:sfntaxi/domain/core/token.dart';
+
+import '../../domain/core/token.dart';
 
 
 

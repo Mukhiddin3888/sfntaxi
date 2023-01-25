@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:sfntaxi/domain/core/connectivity_ext.dart';
 import '../../../infrastructure/services/connectivity.dart';
 import '../../infrastructure/services/db_service.dart';
 import '../routes/routes.dart';
@@ -21,8 +20,8 @@ class NoConnection extends StatefulWidget {
 class _NoConnectionState extends State<NoConnection> {
   Future<void> retry() async {
     EasyLoading.show();
-    final result = await ConnectivityX.create;
-    if (result.hasNetworkConnection) {
+    final result = await ConnectivityX().create();
+    if (result) {
       DBService.create.then((value) => Navigator.pushAndRemoveUntil(
           context, Routes.getAppWidget(value,result), (route) => false));
       EasyLoading.dismiss();

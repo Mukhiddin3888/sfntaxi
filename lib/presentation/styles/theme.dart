@@ -1,10 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sfntaxi/infrastructure/services/db_service.dart';
-import 'package:sfntaxi/presentation/styles/custom_theme_mode.dart';
 import 'package:sfntaxi/presentation/styles/custom_theme_mode_ext.dart';
 import 'package:sfntaxi/presentation/styles/style.dart';
+
+import '../../infrastructure/services/db_service.dart';
+import 'custom_theme_mode.dart';
+
 
 
 part 'colors.dart';

@@ -14,6 +14,7 @@ class CustomColorSet {
   final Color lightOrange2;
   final Color lightGrey;
   final Color lightFiolet;
+  final Color backgroundColor;
 
   CustomColorSet._({
     required this.black,
@@ -29,6 +30,7 @@ class CustomColorSet {
     required this.lightOrange,
     required this.lightOrange2,
     required this.lightFiolet,
+    required this.backgroundColor,
   });
 
   factory CustomColorSet._create(CustomThemeMode mode) {
@@ -46,6 +48,7 @@ class CustomColorSet {
     const lightOrange = Style.lightOrange;
     const lightOrange2 = Style.lightOrange2;
     const lightFiolet = Style.lightFiolet;
+    const backgroundColor = Style.backgroundColor;
 
     // final grey = isLight ? Style.grey : Style.bgDarkV;
 
@@ -64,6 +67,7 @@ class CustomColorSet {
         orange: orange,
         green: green,
         lightFiolet: lightFiolet,
+        backgroundColor: backgroundColor,
         transparent: transparent);
   }
 

@@ -2,9 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sfntaxi/presentation/styles/theme.dart';
-import 'package:sfntaxi/presentation/styles/theme_warpper.dart';
-import 'package:sfntaxi/presentation/widgets/custom_cta_button.dart';
+import '../../routes/routes.dart';
+import '../../styles/theme.dart';
+import '../../styles/theme_warpper.dart';
+import '../../widgets/custom_cta_button.dart';
 
 
 
@@ -95,11 +96,12 @@ class _ChooseLanguagePageState extends State<ChooseLanguagePage> {
 
         ),
         bottomSheet: Padding(
-          padding: EdgeInsets.only(bottom: 48.h, left: 20.w, right: 20.w),
+          padding: EdgeInsets.only( left: 20.w, right: 20.w, bottom: 20.h),
           child: CustomButtonCTA(
               title: 'continue'.tr(),
 
               onTap: () {
+                Navigator.push(context, Routes.getLoginRoute(context));
                 // Navigator.pushAndRemoveUntil(context, Routes.getOnboardingRoute(context), (route) => false);
               }),
         ),
